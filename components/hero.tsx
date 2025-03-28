@@ -38,9 +38,8 @@ export function Hero({ dictionary }: HeroProps) {
           className="h-full w-full object-cover"
           onError={(e) => console.error('Error loading video:', e)}
         >
-          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video.webm" type="video/mp4" />
-          <source src="/coding_video.webm" type="video/webm" />
-          <source src="/coding_video.mp4" type="video/mp4" />
+          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video.webm" type="video/webm" />
+          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video_balanced.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50" /> {/* Overlay for better text visibility */}
