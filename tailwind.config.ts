@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        sans: ["var(--font-montserrat)"],
         playfair: ["var(--font-playfair)"],
         handwriting: ["var(--font-handwriting)"],
       },

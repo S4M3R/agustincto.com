@@ -45,15 +45,15 @@ export function About({ dictionary }: AboutProps) {
           <div ref={imageRef} className={`relative ${imageInView ? "animate-slide-in-right" : "opacity-0"}`}>
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/agustin_photo.jpg"
+                src="/agustin_photo.jpeg"
                 alt="Agustin Suarez Merino"
                 fill
                 className="object-cover"
                 priority
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 h-24 w-24 bg-accent" />
-            <div className="absolute -right-6 -top-6 h-24 w-24 bg-accent" />
+            <div className="absolute -bottom-6 -left-6 h-24 w-24 bg-blue-200" />
+            <div className="absolute -right-6 -top-6 h-24 w-24 bg-blue-200" />
           </div>
         </div>
       </div>

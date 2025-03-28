@@ -130,9 +130,13 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="mt-8"
           >
-            <button className="bg-accent text-accent-foreground hover:bg-accent/90 py-3 px-6 rounded-md shadow-md font-medium flex items-center mx-auto group transition-all duration-300">
-              <span>Learn about our journey</span>
-              <svg 
+            <a
+              href="https://agustincto.hashnode.dev/future-and-history-of-ventia"
+              target="_blank"
+            >
+              <button className="bg-accent text-accent-foreground hover:bg-accent/90 py-3 px-6 rounded-md shadow-md font-medium flex items-center mx-auto group transition-all duration-300">
+                <span>Learn about our journey</span>
+                <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 
                 height="24" 
@@ -148,13 +152,14 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
             </button>
+            </a>
           </motion.div>
         </div>
 
         <div className="relative">
           <motion.div 
             ref={fridgeRef}
-            className="relative bg-muted rounded-lg shadow-xl mx-auto aspect-[4/3] max-w-4xl"
+            className="relative bg-muted rounded-lg shadow-xl mx-auto aspect-[3/4] md:aspect-[4/3] max-w-3xl w-[85vw] md:w-auto"
             style={{ 
               rotate,
               scale 
@@ -212,15 +217,17 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
                   stiffness: 100,
                   damping: 12
                 }}
-                {...(item.type === "photo" ? {
+                {...(item.type === "photo" || item.type === "sticker" ? {
                   whileHover: { 
                     scale: 1.08, 
                     rotate: item.rotate / 2,
                     zIndex: 50,
+                    cursor: "grab",
                   },
                   whileTap: { 
                     scale: 0.95, 
                     rotate: item.rotate * 1.5,
+                    cursor: "grabbing",
                   },
                   drag: true,
                   dragConstraints: fridgeRef,
@@ -230,15 +237,13 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
               >
                 <div 
                   className={`
-                    relative overflow-hidden shadow-md
-                    ${item.type === "photo" ? "border-4 border-white" : ""}
-                    ${item.type === "sticker" ? "rounded-md" : ""}
+                    relative overflow-hidden
+                    ${item.type === "photo" ? "border-4 border-white shadow-md" : ""}
+                    ${(item.type === "photo" || item.type === "sticker") ? "cursor-grab active:cursor-grabbing" : ""}
                   `}
                   style={{
                     width: item.width,
                     height: item.height,
-                    ...(item.type === "sticker" ? {
-                    } : {})
                   }}
                 >
                   <Image
@@ -274,9 +279,6 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
                     ></div>
                   </>
                 )}
-                {item.type === "sticker" && (
-                  <></>
-                )}
               </motion.div>
             ))}
             
@@ -287,11 +289,21 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
               animate={sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 1.5 }}
             >
-              <p className="font-playfair text-sm text-gray-700 leading-tight">
+              <p className="font-handwriting text-sm text-gray-700 leading-tight">
                 Building a CRM for LATAM consultative sales teams
                 <br /><br />
                 — Agustín
               </p>
+            </motion.div>
+
+            {/* Drag hint text */}
+            <motion.div
+              className="absolute top-4 right-4 text-xs text-gray-400 font-medium"
+              initial={{ opacity: 0 }}
+              animate={sectionInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 1 }}
+            >
+              Drag items to rearrange
             </motion.div>
           </motion.div>
         </div>

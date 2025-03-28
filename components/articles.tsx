@@ -34,28 +34,27 @@ export function Articles({ dictionary }: ArticlesProps) {
   const articles: Article[] = [
     {
       id: "1",
-      title: "Building Scalable SaaS Applications with Next.js",
-      excerpt: "Learn how to architect and build scalable SaaS applications using Next.js and modern web technologies.",
-      date: "2024-03-15",
-      image: "/placeholder.svg?height=400&width=600&text=Next.js+SaaS",
-      link: "#",
+      title: "Ventia's International Expansion and Microsoft Partnership",
+      excerpt: "Exclusive interview with Ventia's leadership team discussing our international growth, AI innovation with Microsoft, and our vision for the future of business management.",
+      date: "2024-04-26",
+      image: "/articles_image/info_negocios_post.png",
+      link: "https://infonegocios.biz/plus/de-startup-a-empresa-ventia-mejora-en-inteligencia-comercial-junto-a-microsoft-y-se-expande-a-peru",
     },
     {
       id: "2",
-      title: "The Future of AI in Business Applications",
-      excerpt:
-        "Exploring how AI is transforming business applications and what it means for developers and entrepreneurs.",
-      date: "2024-02-28",
-      image: "/placeholder.svg?height=400&width=600&text=AI+Business",
-      link: "#",
+      title: "First AI Lab in Latin America: Our Journey with Microsoft",
+      excerpt: "A week of innovation at the Microsoft AI Co-Innovation Labs, where we developed a new AI integration for VENTIA alongside an amazing team.",
+      date: "2024-03-28",
+      image: "/articles_image/mf_post_image.png",
+      link: "https://www.linkedin.com/posts/agustinsuarezmerino_uruguay-ventia-microsoft-activity-7173719571554676739-IHBC?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSL9tkBmHkVnRSiBW5RwEq7vtFCRRfB46E",
     },
     {
       id: "3",
-      title: "From Idea to Launch: My Journey Building Ventia",
-      excerpt: "The challenges and lessons learned from building and scaling a CRM platform from scratch.",
-      date: "2024-01-10",
-      image: "/placeholder.svg?height=400&width=600&text=Startup+Journey",
-      link: "#",
+      title: "Flappy Bird Lands on PIXO: A New Gaming Experience for Kids",
+      excerpt: "Exciting new addition to the tech ecosystem: Flappy Bird game developed for PIXO's Arduino-based children's console, bringing classic gaming fun to young players.",
+      date: "2024-03-28",
+      image: "/articles_image/game_post_image.png",
+      link: "https://www.linkedin.com/posts/agustinsuarezmerino_startup-arduino-pixo-activity-7100557766435426304-WftB",
     },
   ]
 
@@ -102,9 +101,11 @@ export function Articles({ dictionary }: ArticlesProps) {
         </div>
 
         <div className={`mt-10 flex justify-center ${inView ? "animate-fade-in delay-500" : "opacity-0"}`}>
-          <Button variant="outline" size="lg">
-            {dictionary.viewAll}
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <Button variant="outline" size="lg" asChild>
+            <Link href="https://agustincto.hashnode.dev/">
+              {dictionary.viewAll}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
