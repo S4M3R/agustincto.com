@@ -49,6 +49,7 @@ export function About({ dictionary }: AboutProps) {
                 alt="Agustin Suarez Merino"
                 fill
                 className="object-cover"
+                priority
               />
             </div>
             <div className="absolute -bottom-6 -left-6 h-24 w-24 bg-accent" />
