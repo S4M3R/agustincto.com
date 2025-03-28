@@ -17,6 +17,38 @@
     "content": "A los 23 años, actualmente lidero el producto en Ventia, una plataforma SaaS de CRM y Gestión del Rendimiento de Ventas en rápida expansión que atiende a clientes en toda América Latina. Apasionado por construir soluciones de software escalables, liderar equipos de alto rendimiento y generar resultados empresariales impactantes a través de la tecnología.",
     "cta": "Conoce más sobre mí"
   },
+  "skills": {
+    "title": "Habilidades",
+    "categories": [
+      {
+        "name": "Lenguajes y Frameworks",
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "LangChain y LLMs",
+          "Python",
+          "React",
+          "Next.js",
+          "Express",
+          "Redux",
+          "React Native",
+          "Tailwind",
+          "Electron",
+          "Java",
+          "C# y .Net"
+        ]
+      },
+      {
+        "name": "Bases de Datos",
+        "skills": ["MongoDB", "PostgreSQL", "Redis"]
+      },
+      {
+        "name": "Nube e Infraestructura",
+        "skills": ["AWS", "Docker", "Git", "CI/CD"]
+      }
+    ]
+  },
   "projects": {
     "title": "Mis Proyectos",
     "subtitle": "Una colección de proyectos profesionales y personales que he construido a lo largo de los años.",
