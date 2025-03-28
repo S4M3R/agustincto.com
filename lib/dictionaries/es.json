@@ -1,0 +1,47 @@
+{
+  "header": {
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "articles": "Artículos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Crea un Negocio y una Vida que Ames",
+    "subtitle": "Ingeniero de Software y Emprendedor construyendo soluciones innovadoras para la web moderna",
+    "cta": "Contáctame",
+    "scrollDown": "Desplazar hacia abajo"
+  },
+  "about": {
+    "title": "AGUSTIN",
+    "subtitle": "Ingeniero fundador con 8 años de experiencia en desarrollo de software e innovación técnica.",
+    "content": "A los 23 años, actualmente lidero el producto en Ventia, una plataforma SaaS de CRM y Gestión del Rendimiento de Ventas en rápida expansión que atiende a clientes en toda América Latina. Apasionado por construir soluciones de software escalables, liderar equipos de alto rendimiento y generar resultados empresariales impactantes a través de la tecnología.",
+    "cta": "Conoce más sobre mí"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Una colección de proyectos profesionales y personales que he construido a lo largo de los años.",
+    "filterAll": "Todos los Proyectos",
+    "filterWork": "Trabajo",
+    "filterPersonal": "Personal",
+    "viewProject": "Ver Proyecto"
+  },
+  "articles": {
+    "title": "Artículos",
+    "subtitle": "Pensamientos y perspectivas sobre tecnología, emprendimiento y desarrollo de productos.",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todos los Artículos"
+  },
+  "contact": {
+    "title": "Conéctate Conmigo",
+    "subtitle": "Encuéntrame en redes sociales o envíame un email",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "viewResume": "Ver Mi Currículum"
+  },
+  "footer": {
+    "copyright": "© 2024 Agustin Suarez Merino. Todos los derechos reservados."
+  }
+}
+

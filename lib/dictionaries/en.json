@@ -1,0 +1,146 @@
+{
+  "header": {
+    "about": "About",
+    "projects": "Projects",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Create a Business and Life You Love",
+    "subtitle": "Software Engineer & Entrepreneur building innovative solutions for the modern web",
+    "cta": "Get in Touch",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "title": "AGUSTIN",
+    "subtitle": "Founding engineer with 8 years of expertise in software development and technical innovation.",
+    "content": "At 23 years old, I'm currently leading product at Ventia, a rapidly expanding CRM & Sales Performance Management SaaS platform serving clients across Latin America. Passionate about building scalable software solutions, leading high-performing teams, and driving impactful business results through technology.",
+    "cta": "Learn more about me"
+  },
+  "experience": {
+    "title": "Experience",
+    "jobs": [
+      {
+        "title": "CTO & Founder",
+        "company": "Ventia",
+        "period": "June 2021 – Present",
+        "location": "Montevideo, Uruguay",
+        "description": [
+          "Founded and scaled Ventia from startup to an established company, achieving $360K ARR, with more than 30 clients.",
+          "Launched a comprehensive CRM and analytics platform tailored specifically for SMBs with consultive sales proeccess on the latam market.",
+          "Managed a technical team consisting of 3 developers and 1 UI/UX designer.",
+          "Developed and launched a complete React Native mobile application.",
+          "Participated in prestigious acceleration and immersion programs including Endeavor ScaleUp, Itaú Cubo, and Mana Tech Miami Immersion Program."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": [
+      {
+        "name": "Languages & Frameworks",
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Python",
+          "React",
+          "Next.js",
+          "Express",
+          "Redux",
+          "React Native",
+          "Tailwind",
+          "Electron",
+          "Java",
+          "C# and .Net"
+        ]
+      },
+      {
+        "name": "Databases",
+        "skills": ["MongoDB", "PostgreSQL", "Redis"]
+      },
+      {
+        "name": "Cloud & Infrastructure",
+        "skills": ["AWS", "Docker", "Git", "CI/CD"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A collection of work and personal projects I've built over the years.",
+    "filterAll": "All Projects",
+    "filterWork": "Work",
+    "filterPersonal": "Personal",
+    "viewProject": "View Project",
+    "list": [
+      {
+        "year": "2025",
+        "name": "Companion IA",
+        "description": "Built a personal IA helper, which keeps track of my tasks and helps me respond/improve my work based on current task - Electron + Vite, Shadcn, Open AI API, Cursor."
+      },
+      {
+        "year": "2024",
+        "name": "thecirculartech.com",
+        "description": "Fashion product and design manager SaaS - Hired and managed developer to build the product and created the product specification and roadmap."
+      },
+      {
+        "year": "2024",
+        "name": "IA Customer analysis project",
+        "description": "Prof of concept using GPT models with Microsoft Innovation IA Lab and Ventia."
+      },
+      {
+        "year": "2023",
+        "name": "StartupsUruguay.com",
+        "description": "Built a directory of uruguayan startups - Next.js + Tailwind."
+      },
+      {
+        "year": "2020",
+        "name": "Vendedores Pro",
+        "description": "A platform for SMBs to run their own affiliate programs."
+      }
+    ]
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Thoughts and insights on technology, entrepreneurship, and product development.",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "podcast": {
+    "title": "The Tech Founder Podcast",
+    "subtitle": "Conversations about building products, leading teams, and growing businesses.",
+    "listenNow": "Listen Now",
+    "viewAll": "View All Episodes"
+  },
+  "education": {
+    "title": "Education",
+    "list": [
+      {
+        "degree": "Bachelor's Degree in Computer Systems",
+        "institution": "Universidad ORT Uruguay",
+        "location": "Montevideo, Uruguay",
+        "period": "January 2021 – November 2025 (expected)"
+      },
+      {
+        "degree": "IT and Programming Technician",
+        "institution": "ESI Buceo",
+        "location": "Montevideo, Uruguay",
+        "period": "2017 – 2019"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Connect With Me",
+    "subtitle": "Find me on social media or send me an email",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "viewResume": "View My Resume"
+  },
+  "footer": {
+    "copyright": "© 2024 Agustin Suarez Merino. All rights reserved."
+  }
+}
+
