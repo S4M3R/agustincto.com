@@ -15,9 +15,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Agustin Suarez Merino",
-  description: "Software Engineer & Entrepreneur",
-    generator: 'v0.dev'
+  title: "Agustin Suarez | Portfolio",
+  description: "Software Engineer & Entrepreneur building innovative solutions",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -35,7 +35,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

@@ -20,8 +20,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-montserrat)"],
+        sans: ["var(--font-sans)"],
         playfair: ["var(--font-playfair)"],
+        handwriting: ["var(--font-handwriting)"],
       },
       colors: {
         border: "hsl(var(--border))",

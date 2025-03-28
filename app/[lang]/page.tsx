@@ -5,6 +5,7 @@ import { Projects } from "@/components/projects"
 import { Articles } from "@/components/articles"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { CurrentStartup } from "@/components/current-startup"
 import { getDictionary } from "@/lib/dictionary"
 
 export async function generateStaticParams() {
@@ -23,6 +24,7 @@ export default async function Home({
       <Header dictionary={dictionary.header} currentLang={lang} />
       <Hero dictionary={dictionary.hero} />
       <About dictionary={dictionary.about} />
+      <CurrentStartup dictionary={dictionary.currentStartup} />
       <Projects dictionary={dictionary.projects} />
       <Articles dictionary={dictionary.articles} />
       <Contact dictionary={dictionary.contact} />

@@ -141,6 +141,11 @@
   },
   "footer": {
     "copyright": "© 2024 Agustin Suarez Merino. All rights reserved."
+  },
+  "currentStartup": {
+    "title": "My Current Startup",
+    "subtitle": "Building the future of CRM and Sales Performance Management",
+    "description": "At Ventia, we're revolutionizing how businesses manage their sales processes and customer relationships. From participating in top accelerator programs to building a passionate team, our journey has been filled with innovation and growth."
   }
 }
 
