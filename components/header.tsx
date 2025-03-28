@@ -36,30 +36,40 @@ export function Header({ dictionary, currentLang }: HeaderProps) {
       }`}
     >
       <div className="container flex items-center justify-between px-4 md:px-6">
-        <Link href={`/${currentLang}`} className="text-xl font-bold tracking-tight">
-          Agustin
+        <Link href={`/${currentLang}`} className={`text-xl font-bold tracking-tight transition-colors ${
+          isScrolled ? "text-foreground" : "text-white"
+        }`}>
+          Agustín Suárez
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center space-x-6 md:flex">
-          <Link href="#about" className="text-sm font-medium transition-colors hover:text-accent-foreground">
+          <Link href="#about" className={`text-sm font-medium transition-colors ${
+            isScrolled ? "hover:text-accent-foreground" : "text-white hover:text-white/80"
+          }`}>
             {dictionary.about}
           </Link>
-          <Link href="#projects" className="text-sm font-medium transition-colors hover:text-accent-foreground">
+          <Link href="#projects" className={`text-sm font-medium transition-colors ${
+            isScrolled ? "hover:text-accent-foreground" : "text-white hover:text-white/80"
+          }`}>
             {dictionary.projects}
           </Link>
-          <Link href="#articles" className="text-sm font-medium transition-colors hover:text-accent-foreground">
+          <Link href="#articles" className={`text-sm font-medium transition-colors ${
+            isScrolled ? "hover:text-accent-foreground" : "text-white hover:text-white/80"
+          }`}>
             {dictionary.articles}
           </Link>
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-accent-foreground">
+          <Link href="#contact" className={`text-sm font-medium transition-colors ${
+            isScrolled ? "hover:text-accent-foreground" : "text-white hover:text-white/80"
+          }`}>
             {dictionary.contact}
           </Link>
-          <LanguageSwitcher currentLang={currentLang} />
+          <LanguageSwitcher currentLang={currentLang} isScrolled={isScrolled} />
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center md:hidden">
-          <LanguageSwitcher currentLang={currentLang} />
+          <LanguageSwitcher currentLang={currentLang} isScrolled={isScrolled} />
           <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="ml-2">
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>

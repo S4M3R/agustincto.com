@@ -8,9 +8,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 interface LanguageSwitcherProps {
   currentLang: string
+  isScrolled?: boolean
 }
 
-export function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ currentLang, isScrolled = false }: LanguageSwitcherProps) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -22,7 +23,9 @@ export function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+        <Button variant="ghost" size="icon" className={`h-8 w-8 rounded-full transition-colors ${
+          isScrolled ? "text-foreground hover:text-accent-foreground" : "text-white hover:text-white/80"
+        }`}>
           <Globe className="h-4 w-4" />
           <span className="sr-only">Switch language</span>
         </Button>

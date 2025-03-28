@@ -27,19 +27,23 @@ export function Hero({ dictionary }: HeroProps) {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Grid Gallery Background */}
-      <div className="absolute inset-0 z-0 image-overlay">
-        <div className="grid-gallery h-full w-full">
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div key={i} className="aspect-square overflow-hidden">
-              <img
-                src={`/placeholder.svg?height=300&width=300&text=Project+${i + 1}`}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="h-full w-full object-cover"
+          onError={(e) => console.error('Error loading video:', e)}
+        >
+          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video.webm" type="video/mp4" />
+          <source src="/coding_video.webm" type="video/webm" />
+          <source src="/coding_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black/50" /> {/* Overlay for better text visibility */}
       </div>
 
       {/* Content */}

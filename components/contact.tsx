@@ -66,19 +66,18 @@ export function Contact({ dictionary }: ContactProps) {
                 <span className="sr-only">{dictionary.linkedin}</span>
               </Link>
 
-              <Link
-                href="mailto:samerstudio@outlook.com"
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-accent-foreground transition-transform hover:scale-110"
-              >
-                <Mail className="h-8 w-8" />
-                <span className="sr-only">{dictionary.email}</span>
-              </Link>
             </div>
 
-            <Button className="mt-8 bg-white text-accent-foreground hover:bg-white/90" size="lg">
-              {dictionary.viewResume}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link
+              href="/Agustín Suárez Public CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="mt-8 bg-white text-accent-foreground hover:bg-white/90" size="lg">
+                {dictionary.viewResume}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
