@@ -108,12 +108,6 @@
     "readMore": "Read More",
     "viewAll": "View All Articles"
   },
-  "podcast": {
-    "title": "The Tech Founder Podcast",
-    "subtitle": "Conversations about building products, leading teams, and growing businesses.",
-    "listenNow": "Listen Now",
-    "viewAll": "View All Episodes"
-  },
   "education": {
     "title": "Education",
     "list": [
@@ -146,7 +140,7 @@
   "currentStartup": {
     "title": "My Current Startup",
     "subtitle": "Building the future of CRM and Sales Performance Management",
-    "description": "At Ventia, we're revolutionizing how businesses manage their sales processes and customer relationships. From participating in top accelerator programs to building a passionate team, our journey has been filled with innovation and growth."
+    "description": "I cofounded Ventia at 19 years old and serve as the CTO. We're revolutionizing how businesses manage their sales processes and customer relationships. From participating in top accelerator programs to building a passionate team, our journey has been filled with innovation and growth. Today, we've expanded to more than 10 employees and continue to scale rapidly."
   }
 }
 
