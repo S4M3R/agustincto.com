@@ -74,31 +74,84 @@
     "filterWork": "Work",
     "filterPersonal": "Personal",
     "viewProject": "View Project",
+    "technology": "Technologies",
+    "backToProjects": "Back to Projects",
+    "projects": [],
     "list": [
       {
         "year": "2025",
         "name": "Companion IA",
-        "description": "Built a personal IA helper, which keeps track of my tasks and helps me respond/improve my work based on current task - Electron + Vite, Shadcn, Open AI API, Cursor."
+        "description": "Built a personal IA helper, which keeps track of my tasks and helps me respond/improve my work based on current task - Electron + Vite, Shadcn, Open AI API, Cursor.",
+        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React"],
+        "category": "personal",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "GitHub Repository",
+            "url": "https://github.com/example/companion-ia"
+          }
+        ]
       },
       {
         "year": "2024",
         "name": "thecirculartech.com",
-        "description": "Fashion product and design manager SaaS - Hired and managed developer to build the product and created the product specification and roadmap."
+        "description": "Fashion product and design manager SaaS - Hired and managed developer to build the product and created the product specification and roadmap.",
+        "technologies": ["React", "Node.js", "TypeScript", "Tailwind", "Next.js"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visit Website",
+            "url": "https://thecirculartech.com"
+          }
+        ]
       },
       {
         "year": "2024",
         "name": "IA Customer analysis project",
-        "description": "Prof of concept using GPT models with Microsoft Innovation IA Lab and Ventia."
+        "description": "Prof of concept using GPT models with Microsoft Innovation IA Lab and Ventia.",
+        "technologies": ["Python", "OpenAI", "LangChain", "React", "TypeScript"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Case Study",
+            "url": "https://example.com/ia-customer-analysis"
+          }
+        ]
       },
       {
         "year": "2023",
         "name": "StartupsUruguay.com",
-        "description": "Built a directory of uruguayan startups - Next.js + Tailwind."
+        "description": "Built a directory of uruguayan startups - Next.js + Tailwind.",
+        "technologies": ["Next.js", "Tailwind", "React", "TypeScript", "Git"],
+        "category": "personal",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visit Website",
+            "url": "https://startupsuruguay.com"
+          }
+        ]
       },
       {
         "year": "2020",
         "name": "Vendedores Pro",
-        "description": "A platform for SMBs to run their own affiliate programs."
+        "description": "A platform for SMBs to run their own affiliate programs.",
+        "technologies": ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visit Website",
+            "url": "https://vendedorespro.com"
+          }
+        ]
       }
     ]
   },

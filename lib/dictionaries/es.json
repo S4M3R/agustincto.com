@@ -55,7 +55,87 @@
     "filterAll": "Todos los Proyectos",
     "filterWork": "Trabajo",
     "filterPersonal": "Personal",
-    "viewProject": "Ver Proyecto"
+    "viewProject": "Ver Proyecto",
+    "technology": "Tecnologías",
+    "backToProjects": "Volver a Proyectos",
+    "projects": [],
+    "list": [
+      {
+        "year": "2025",
+        "name": "Companion IA",
+        "description": "Desarrollé un asistente personal de IA que realiza un seguimiento de mis tareas y me ayuda a mejorar mi trabajo basado en la tarea actual - Electron + Vite, Shadcn, Open AI API, Cursor.",
+        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React"],
+        "category": "personal",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Repositorio GitHub",
+            "url": "https://github.com/example/companion-ia"
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "name": "thecirculartech.com",
+        "description": "SaaS de gestión de productos y diseño de moda - Contraté y gestioné a desarrolladores para crear el producto, y creé la especificación y hoja de ruta del producto.",
+        "technologies": ["React", "Node.js", "TypeScript", "Tailwind", "Next.js"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visitar Sitio Web",
+            "url": "https://thecirculartech.com"
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "name": "Proyecto de análisis de clientes con IA",
+        "description": "Prueba de concepto utilizando modelos GPT con Microsoft Innovation IA Lab y Ventia.",
+        "technologies": ["Python", "OpenAI", "LangChain", "React", "TypeScript"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Caso de Estudio",
+            "url": "https://example.com/ia-customer-analysis"
+          }
+        ]
+      },
+      {
+        "year": "2023",
+        "name": "StartupsUruguay.com",
+        "description": "Creé un directorio de startups uruguayas - Next.js + Tailwind.",
+        "technologies": ["Next.js", "Tailwind", "React", "TypeScript", "Git"],
+        "category": "personal",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visitar Sitio Web",
+            "url": "https://startupsuruguay.com"
+          }
+        ]
+      },
+      {
+        "year": "2020",
+        "name": "Vendedores Pro",
+        "description": "Una plataforma para que las PyMEs ejecuten sus propios programas de afiliados.",
+        "technologies": ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
+        "category": "work",
+        "thumbnailUrl": "/placeholder.svg",
+        "videoUrl": null,
+        "links": [
+          {
+            "title": "Visitar Sitio Web",
+            "url": "https://vendedorespro.com"
+          }
+        ]
+      }
+    ]
   },
   "articles": {
     "title": "Artículos",
