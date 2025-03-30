@@ -84,6 +84,20 @@ export function Hero({ dictionary }: HeroProps) {
             {dictionary.title}
           </h1>
           <p className="mb-8 text-lg sm:text-xl md:text-2xl">{dictionary.subtitle}</p>
+          
+          {/* SF Visit - High Contrast Version */}
+          <div className={`mb-8 ${inView ? "animate-fade-in delay-200" : "opacity-0"}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/50 to-indigo-500/40 rounded-md border border-blue-400/50 shadow-sm hover:shadow-blue-500/30 hover:border-blue-300/60 transition-all duration-300">
+              <span className="text-white font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Visiting San Francisco in April and May
+              </span>
+            </div>
+          </div>
+          
           <Button
             size="lg"
             className={`bg-white px-8 text-lg font-semibold text-black hover:bg-white/90 ${
