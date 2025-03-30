@@ -16,6 +16,8 @@ interface HeroProps {
 
 export function Hero({ dictionary }: HeroProps) {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,6 +25,13 @@ export function Hero({ dictionary }: HeroProps) {
 
   useEffect(() => {
     setIsLoaded(true)
+    
+    // Delay video loading to prioritize other content
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true)
+    }, 100)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -34,12 +43,32 @@ export function Hero({ dictionary }: HeroProps) {
           muted
           loop
           playsInline
-          preload="auto"
-          className="h-full w-full object-cover"
+          preload="metadata"
+          poster="/optimized/webp/video-poster.webp"
+          className="h-full w-full object-cover md:object-center sm:object-center object-[28%_center]"
+          onLoadedData={() => setVideoLoaded(true)}
           onError={(e) => console.error('Error loading video:', e)}
         >
-          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video.webm" type="video/webm" />
-          <source src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/coding_video_balanced.mp4" type="video/mp4" />
+          {shouldLoadVideo && (
+            <>
+              {/* Responsive video sources by device size */}
+              <source
+                media="(min-width: 768px)"
+                src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/background_video.webm"
+                type="video/webm"
+              />
+              <source
+                media="(min-width: 768px)"
+                src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/background_video.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="https://pub-5a9058a81ff94bd694f7299087e254c9.r2.dev/background_video_mobile.mp4"
+                type="video/mp4"
+              />
+              <source src="/background_video.mp4" type="video/mp4" />
+            </>
+          )}
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50" /> {/* Overlay for better text visibility */}

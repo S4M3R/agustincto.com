@@ -43,7 +43,7 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
     {
       id: 2,
       type: "photo",
-      src: "/fridge-photos/ventia_team.JPG",
+      src: "/optimized/fridge-photos/ventia_team.jpg",
       alt: "Ventia Team Photo",
       width: 220,
       height: 160,
@@ -53,7 +53,7 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
     {
       id: 3,
       type: "photo",
-      src: "/fridge-photos/microsoft_colab.jpeg",
+      src: "/optimized/fridge-photos/microsoft_colab.jpg",
       alt: "Microsoft Collaboration",
       width: 180,
       height: 120,
@@ -83,7 +83,7 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
     {
       id: 6,
       type: "photo",
-      src: "/fridge-photos/miami_techweek.JPG",
+      src: "/optimized/fridge-photos/miami_techweek.jpg",
       alt: "Miami Tech Week",
       width: 160,
       height: 110,
@@ -103,7 +103,7 @@ export function CurrentStartup({ dictionary }: CurrentStartupProps) {
     {
       id: 9,
       type: "photo",
-      src: "/fridge-photos/me_coding.jpeg",
+      src: "/optimized/fridge-photos/me_coding.jpg",
       alt: "Coding Session",
       width: 170,
       height: 120,

@@ -45,7 +45,7 @@ export function About({ dictionary }: AboutProps) {
           <div ref={imageRef} className={`relative ${imageInView ? "animate-slide-in-right" : "opacity-0"}`}>
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/agustin_photo.jpeg"
+                src="/optimized/webp/agustin_photo.webp"
                 alt="Agustin Suarez Merino"
                 fill
                 className="object-cover"
