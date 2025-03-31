@@ -156,9 +156,29 @@
     "copyright": "© 2024 Agustin Suarez Merino. Todos los derechos reservados."
   },
   "currentStartup": {
-    "title": "Mi Startup Actual",
-    "subtitle": "Construyendo el futuro del CRM y la Gestión del Rendimiento de Ventas",
-    "description": "Cofundé Ventia a los 19 años y me desempeño como CTO. Estamos revolucionando cómo las empresas gestionan sus procesos de ventas y relaciones con los clientes. Desde participar en programas de aceleración de primer nivel hasta construir un equipo apasionado, nuestro viaje ha estado lleno de innovación y crecimiento. Hoy, hemos crecido a más de 10 empleados y continuamos expandiéndonos rápidamente."
+    "chip": "2021 - Presente",
+    "title": "Ventia",
+    "subtitle": "Cofundada y CTO a los 19 años",
+    "description": "Lidero un equipo técnico junto con un diseñador de producto, con control total del producto, llegando a más de 30 clientes en diferentes países de América Latina.",
+    "website": "getventia.com",
+    "role": "CTO & Fundador",
+    "period": "2021 - Presente",
+    "achievements": [
+      "Diseñé y construí un CRM vertical para equipos de ventas consultivas en LATAM",
+      "Lideré un equipo de desarrolladores y diseñador, estableciendo procesos efectivos de desarrollo",
+      "Implementé integración con múltiples plataformas utilizando APIs públicas",
+      "Alcanzamos más de 30 clientes en diferentes países de América Latina"
+    ],
+    "technologies": [
+      "React", 
+      "React Native", 
+      "Node.js", 
+      "Express", 
+      "MongoDB", 
+      "Redis", 
+      "AWS", 
+      "Figma"
+    ]
   }
 }
 

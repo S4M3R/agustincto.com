@@ -191,9 +191,29 @@
     "copyright": "© 2024 Agustin Suarez Merino. All rights reserved."
   },
   "currentStartup": {
-    "title": "My Current Startup",
-    "subtitle": "Building the future of CRM and Sales Performance Management",
-    "description": "I cofounded Ventia at 19 years old and serve as the CTO. We're revolutionizing how businesses manage their sales processes and customer relationships. From participating in top accelerator programs to building a passionate team, our journey has been filled with innovation and growth. Today, we've expanded to more than 10 employees and continue to scale rapidly."
+    "chip": "2021 - Present",
+    "title": "Ventia",
+    "subtitle": "Cofounded and CTO at 19 years old",
+    "description": "Leading a technical team with a product designer, with full product ownership, reaching over 30 customers across different countries in Latin America.",
+    "website": "getventia.com",
+    "role": "CTO & Founder",
+    "period": "2021 - Present",
+    "achievements": [
+      "Designed and built a vertical CRM for consultative sales teams in LATAM",
+      "Led a team of developers and designer, establishing effective development processes",
+      "Implemented integration with multiple platforms using public APIs",
+      "Reached over 30 customers across different countries in Latin America"
+    ],
+    "technologies": [
+      "React", 
+      "React Native", 
+      "Node.js", 
+      "Express", 
+      "MongoDB", 
+      "Redis", 
+      "AWS", 
+      "Figma"
+    ]
   }
 }
 
