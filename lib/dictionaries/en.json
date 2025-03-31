@@ -79,19 +79,24 @@
     "projects": [],
     "list": [
       {
+        "year": "2024",
+        "name": "agustincto.com",
+        "description": "My personal portfolio website built with Next.js, Tailwind CSS, and Shadcn UI components to showcase my projects and skills.",
+        "technologies": ["Next.js", "Tailwind", "TypeScript", "React", "Shadcn UI", "Cursor"],
+        "category": "personal",
+        "thumbnailUrl": "/project_thumbnails/agustincto.png",
+        "videoUrl": null,
+        "links": []
+      },
+      {
         "year": "2025",
-        "name": "Companion IA",
-        "description": "Built a personal IA helper, which keeps track of my tasks and helps me respond/improve my work based on current task - Electron + Vite, Shadcn, Open AI API, Cursor.",
-        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React"],
+        "name": "Companion AI",
+        "description": "Built a personal AI helper, which keeps track of my tasks and helps me respond/improve my work based on current task - Electron + Vite, Shadcn, Open AI API, Cursor.",
+        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React", "Cursor"],
         "category": "personal",
         "thumbnailUrl": "/placeholder.svg",
         "videoUrl": null,
-        "links": [
-          {
-            "title": "GitHub Repository",
-            "url": "https://github.com/example/companion-ia"
-          }
-        ]
+        "links": []
       },
       {
         "year": "2024",
@@ -116,12 +121,7 @@
         "category": "work",
         "thumbnailUrl": "/placeholder.svg",
         "videoUrl": null,
-        "links": [
-          {
-            "title": "Case Study",
-            "url": "https://example.com/ia-customer-analysis"
-          }
-        ]
+        "links": []
       },
       {
         "year": "2023",
@@ -193,7 +193,7 @@
   "currentStartup": {
     "chip": "2021 - Present",
     "title": "Ventia",
-    "subtitle": "Cofounded and CTO at 19 years old",
+    "subtitle": "Cofounded and serving as CTO since age 19",
     "description": "Leading a technical team with a product designer, with full product ownership, reaching over 30 customers across different countries in Latin America.",
     "website": "getventia.com",
     "role": "CTO & Founder",

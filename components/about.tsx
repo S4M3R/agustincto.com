@@ -37,10 +37,10 @@ export function About({ dictionary }: AboutProps) {
             <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-6xl">{dictionary.title}</h2>
             <p className="mb-6 text-xl font-medium text-accent-foreground">{dictionary.subtitle}</p>
             <p className="mb-8 text-lg text-muted-foreground">{dictionary.content}</p>
-            <Button className="group w-fit" variant="outline">
+            {/* <Button className="group w-fit" variant="outline">
               {dictionary.cta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </Button> */}
           </div>
           <div ref={imageRef} className={`relative ${imageInView ? "animate-slide-in-right" : "opacity-0"}`}>
             <div className="relative aspect-[3/4] overflow-hidden">

@@ -61,19 +61,24 @@
     "projects": [],
     "list": [
       {
+        "year": "2024",
+        "name": "agustincto.com",
+        "description": "Mi sitio web de portafolio personal construido con Next.js, Tailwind CSS y componentes Shadcn UI para mostrar mis proyectos y habilidades.",
+        "technologies": ["Next.js", "Tailwind", "TypeScript", "React", "Shadcn UI", "Cursor"],
+        "category": "personal",
+        "thumbnailUrl": "/project_thumbnails/agustincto.png",
+        "videoUrl": null,
+        "links": []
+      },
+      {
         "year": "2025",
-        "name": "Companion IA",
+        "name": "Companion AI",
         "description": "Desarrollé un asistente personal de IA que realiza un seguimiento de mis tareas y me ayuda a mejorar mi trabajo basado en la tarea actual - Electron + Vite, Shadcn, Open AI API, Cursor.",
-        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React"],
+        "technologies": ["Electron", "Vite", "Shadcn", "OpenAI", "TypeScript", "React", "Cursor"],
         "category": "personal",
         "thumbnailUrl": "/placeholder.svg",
         "videoUrl": null,
-        "links": [
-          {
-            "title": "Repositorio GitHub",
-            "url": "https://github.com/example/companion-ia"
-          }
-        ]
+        "links": []
       },
       {
         "year": "2024",
@@ -98,12 +103,7 @@
         "category": "work",
         "thumbnailUrl": "/placeholder.svg",
         "videoUrl": null,
-        "links": [
-          {
-            "title": "Caso de Estudio",
-            "url": "https://example.com/ia-customer-analysis"
-          }
-        ]
+        "links": []
       },
       {
         "year": "2023",
@@ -158,7 +158,7 @@
   "currentStartup": {
     "chip": "2021 - Presente",
     "title": "Ventia",
-    "subtitle": "Cofundada y CTO a los 19 años",
+    "subtitle": "Fundador y CTO desde los 19 años",
     "description": "Lidero un equipo técnico junto con un diseñador de producto, con control total del producto, llegando a más de 30 clientes en diferentes países de América Latina.",
     "website": "getventia.com",
     "role": "CTO & Fundador",

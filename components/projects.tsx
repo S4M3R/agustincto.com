@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Copy, Check } from "lucide-react"
 import ProjectDetailWrapper from "./project-detail-wrapper"
 import Image from "next/image"
 
@@ -44,12 +44,21 @@ interface ProjectsProps {
     backToProjects: string
     projects?: Project[]
     list?: any[]
+    currentStartup?: {
+      title?: string
+      role?: string
+      period?: string
+      description?: string
+      achievements?: string[]
+      technologies?: string[]
+    }
   }
 }
 
 export function Projects({ dictionary }: ProjectsProps) {
   // Add state to track if component is mounted (client-side only)
   const [isMounted, setIsMounted] = useState(false)
+  const [isCopied, setIsCopied] = useState(false)
   
   // Set mounted state on effect
   useEffect(() => {
@@ -64,17 +73,33 @@ export function Projects({ dictionary }: ProjectsProps) {
     
     // If list exists, map it to the Project format
     if (dictionary.list && dictionary.list.length > 0) {
-      return dictionary.list.map((item, index) => {
+      return dictionary.list
+        .filter(item => item.name !== "Vendedores Pro") // Filter out Vendedores Pro
+        .map((item, index) => {
         // Create a stable ID from the name
         const id = `project-${item.name.toLowerCase().replace(/\s+/g, '-')}`;
+        
+        // Get proper thumbnail based on project name
+        let thumbnail = "/placeholder.svg";
+        if (item.name === "Companion AI") {
+          thumbnail = "/project_thumbnails/companionai.png";
+        } else if (item.name === "thecirculartech.com") {
+          thumbnail = "/project_thumbnails/thecirculartech.png";
+        } else if (item.name === "IA Customer analysis project" || item.name === "Proyecto de análisis de clientes con IA") {
+          thumbnail = "/project_thumbnails/aiproject.png";
+        } else if (item.name === "StartupsUruguay.com") {
+          thumbnail = "/project_thumbnails/startupsuruguay.png";
+        } else if (item.name === "agustincto.com") {
+          thumbnail = "/project_thumbnails/agustincto.png";
+        }
         
         return {
           id,
           name: item.name,
           description: item.description,
-          image: "/placeholder.svg", // Use a placeholder to avoid 404s
-          thumbnailUrl: item.thumbnailUrl || "/placeholder.svg",
-          videoUrl: item.videoUrl || null, // Use null instead of empty string
+          image: thumbnail, // Use the thumbnail as the main image too
+          thumbnailUrl: thumbnail,
+          videoUrl: item.videoUrl || null,
           technologies: item.technologies || [],
           tags: [item.year],
           links: item.links || [],
@@ -127,8 +152,16 @@ export function Projects({ dictionary }: ProjectsProps) {
       'langchain': '/techicons/langchain.webp',
       'vite': '/techicons/vite.png',
       'electron': '/techicons/electron.png',
-      'react-native': '/techicons/react-native-logo.svg',
+      'react-native': '/techicons/reactnative.svg',
       'cursor': '/techicons/cursor.jpeg',
+      'node': '/techicons/nodejs.png',
+      'express': '/techicons/express.png',
+      'mongodb': '/techicons/MongoDB Logo.svg',
+      'aws': '/techicons/aws.png',
+      'redis': '/techicons/redis.webp',
+      'redux': '/techicons/redux.png',
+      'ec2': '/techicons/AWS EC2 Logo.svg',
+      'gateway': '/techicons/aws_gateway.png',
     };
     
     // Try to match the tech name (case insensitive)
@@ -141,6 +174,61 @@ export function Projects({ dictionary }: ProjectsProps) {
     
     // Default placeholder if no match
     return '/placeholder.svg';
+  };
+
+  // Function to copy all project information including Ventia
+  const copyProjectsInfo = () => {
+    let allProjectsInfo = "";
+    
+    // First add current startup (Ventia) info
+    if (dictionary.currentStartup) {
+      allProjectsInfo += `${dictionary.currentStartup.title || "Ventia"}\n`;
+      allProjectsInfo += `${dictionary.currentStartup.role || "CTO & Founder"} - ${dictionary.currentStartup.period || "2021 - Present"}\n`;
+      allProjectsInfo += `${dictionary.currentStartup.description || ""}\n\n`;
+      
+      // Add achievements
+      if (dictionary.currentStartup.achievements && dictionary.currentStartup.achievements.length) {
+        allProjectsInfo += "Achievements:\n";
+        dictionary.currentStartup.achievements.forEach(achievement => {
+          allProjectsInfo += `• ${achievement}\n`;
+        });
+        allProjectsInfo += "\n";
+      }
+      
+      // Add technologies
+      if (dictionary.currentStartup.technologies && dictionary.currentStartup.technologies.length) {
+        allProjectsInfo += "Technologies: ";
+        allProjectsInfo += dictionary.currentStartup.technologies.join(", ");
+        allProjectsInfo += "\n\n";
+      }
+    }
+    
+    // Add all other projects
+    if (projects && projects.length) {
+      allProjectsInfo += "Other Projects:\n\n";
+      
+      projects.forEach(project => {
+        allProjectsInfo += `${project.name} (${project.tags.join(", ")})\n`;
+        allProjectsInfo += `${project.description}\n`;
+        allProjectsInfo += `Technologies: ${project.technologies.join(", ")}\n`;
+        
+        if (project.links && project.links.length) {
+          allProjectsInfo += "Links: ";
+          project.links.forEach((link: { title: string; url: string }, index: number) => {
+            allProjectsInfo += `${link.title} (${link.url})${index < project.links.length - 1 ? ", " : ""}`;
+          });
+          allProjectsInfo += "\n";
+        }
+        
+        allProjectsInfo += "\n";
+      });
+    }
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(allProjectsInfo).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    });
   };
 
   // Only render animations on client side
@@ -244,6 +332,28 @@ export function Projects({ dictionary }: ProjectsProps) {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        {/* Copy projects info button */}
+        <div className="mt-10 flex justify-center">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="gap-2"
+            onClick={copyProjectsInfo}
+          >
+            {isCopied ? (
+              <>
+                <Check className="h-4 w-4" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Copy className="h-4 w-4" />
+                Copy Projects Info
+              </>
+            )}
+          </Button>
         </div>
       </div>
 

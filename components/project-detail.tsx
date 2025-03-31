@@ -51,12 +51,32 @@ const animationStyles = `
   }
   
   .title-text {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: rgba(30, 30, 30, 0.8);
-    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
     line-height: 1.2;
     transform: rotate(-1deg);
+    text-decoration: underline;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Hide tech stickers on mobile */
+  @media (max-width: 768px) {
+    .tech-sticker {
+      display: none !important;
+    }
+    
+    .mobile-bottom-controls {
+      bottom: 1rem !important;
+      left: 1rem !important;
+      right: 1rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+    }
   }
 `;
 
@@ -98,160 +118,6 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
   
   const deskRef = useRef<HTMLDivElement>(null)
   
-  // Add dragging functionality via JavaScript after mount
-  useEffect(() => {
-    // Add the animations to the document
-    const styleElement = document.createElement('style');
-    styleElement.innerHTML = animationStyles;
-    document.head.appendChild(styleElement);
-    
-    // Apply animations to elements with a small delay
-    const items = document.querySelectorAll('.item-animation');
-    items.forEach((item, index) => {
-      (item as HTMLElement).style.animationDelay = `${0.4 + (index * 0.1)}s`;
-    });
-    
-    // Apply animation to tech stack
-    const techStack = document.querySelector('.tech-animation');
-    if (techStack) {
-      (techStack as HTMLElement).style.animationDelay = '0.3s';
-    }
-    
-    // Add drag functionality
-    const draggableItems = document.querySelectorAll('.item-animation');
-    
-    const cleanup: Array<() => void> = [];
-    
-    draggableItems.forEach(item => {
-      let isDragging = false;
-      let offsetX = 0;
-      let offsetY = 0;
-      
-      const onMouseDown = (e: MouseEvent) => {
-        isDragging = true;
-        const itemElement = item as HTMLElement;
-        const rect = itemElement.getBoundingClientRect();
-        
-        // Calculate the offset of the mouse within the element
-        offsetX = e.clientX - rect.left;
-        offsetY = e.clientY - rect.top;
-        
-        // Add active class for visual feedback
-        itemElement.classList.add('active');
-        
-        // Prevent default behaviors
-        e.preventDefault();
-      };
-      
-      const onMouseMove = (e: MouseEvent) => {
-        if (!isDragging) return;
-        
-        const itemElement = item as HTMLElement;
-        const deskElement = deskRef.current;
-        
-        if (!deskElement) return;
-        
-        const deskRect = deskElement.getBoundingClientRect();
-        
-        // Calculate new position relative to the desk
-        const newLeft = e.clientX - deskRect.left - offsetX;
-        const newTop = e.clientY - deskRect.top - offsetY;
-        
-        // Set new position
-        itemElement.style.left = `${newLeft}px`;
-        itemElement.style.top = `${newTop}px`;
-        
-        // Remove any right or bottom positioning that might interfere
-        itemElement.style.right = 'auto';
-        itemElement.style.bottom = 'auto';
-      };
-      
-      const onMouseUp = () => {
-        if (!isDragging) return;
-        
-        isDragging = false;
-        const itemElement = item as HTMLElement;
-        
-        // Remove active class
-        itemElement.classList.remove('active');
-      };
-      
-      // Add event listeners with proper TypeScript typing
-      const element = item as HTMLElement;
-      element.addEventListener('mousedown', onMouseDown as EventListener);
-      
-      document.addEventListener('mousemove', onMouseMove as EventListener);
-      document.addEventListener('mouseup', onMouseUp as EventListener);
-      
-      // Touch events for mobile with proper typing
-      const handleTouchStart = (e: TouchEvent) => {
-        const touch = e.touches[0];
-        isDragging = true;
-        const itemElement = item as HTMLElement;
-        const rect = itemElement.getBoundingClientRect();
-        
-        offsetX = touch.clientX - rect.left;
-        offsetY = touch.clientY - rect.top;
-        
-        itemElement.classList.add('active');
-        e.preventDefault();
-      };
-      
-      const handleTouchMove = (e: TouchEvent) => {
-        if (!isDragging) return;
-        
-        const touch = e.touches[0];
-        const itemElement = item as HTMLElement;
-        const deskElement = deskRef.current;
-        
-        if (!deskElement) return;
-        
-        const deskRect = deskElement.getBoundingClientRect();
-        
-        const newLeft = touch.clientX - deskRect.left - offsetX;
-        const newTop = touch.clientY - deskRect.top - offsetY;
-        
-        itemElement.style.left = `${newLeft}px`;
-        itemElement.style.top = `${newTop}px`;
-        itemElement.style.right = 'auto';
-        itemElement.style.bottom = 'auto';
-        
-        e.preventDefault();
-      };
-      
-      const handleTouchEnd = () => {
-        if (!isDragging) return;
-        
-        isDragging = false;
-        const itemElement = item as HTMLElement;
-        itemElement.classList.remove('active');
-      };
-      
-      element.addEventListener('touchstart', handleTouchStart as EventListener);
-      document.addEventListener('touchmove', handleTouchMove as EventListener, { passive: false });
-      document.addEventListener('touchend', handleTouchEnd as EventListener);
-      
-      // Push cleanup functions
-      cleanup.push(() => {
-        element.removeEventListener('mousedown', onMouseDown as EventListener);
-        document.removeEventListener('mousemove', onMouseMove as EventListener);
-        document.removeEventListener('mouseup', onMouseUp as EventListener);
-        
-        element.removeEventListener('touchstart', handleTouchStart as EventListener);
-        document.removeEventListener('touchmove', handleTouchMove as EventListener);
-        document.removeEventListener('touchend', handleTouchEnd as EventListener);
-      });
-    });
-    
-    // Cleanup
-    return () => {
-      if (document.head.contains(styleElement)) {
-        document.head.removeChild(styleElement);
-      }
-      cleanup.forEach(fn => fn());
-    };
-  }, []);
-
   // Add state for tech icon positions
   const [techIconsVisible, setTechIconsVisible] = useState(false);
   
@@ -263,6 +129,187 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
     
     return () => clearTimeout(timer);
   }, []);
+  
+  // Add dragging functionality via JavaScript after mount
+  useEffect(() => {
+    // Add the animations to the document
+    const styleElement = document.createElement('style');
+    styleElement.innerHTML = animationStyles;
+    document.head.appendChild(styleElement);
+    
+    // Wait for a moment to ensure tech icons are rendered
+    const setupDragging = () => {
+      // Apply animations to elements with a small delay
+      const items = document.querySelectorAll('.item-animation');
+      items.forEach((item, index) => {
+        (item as HTMLElement).style.animationDelay = `${0.4 + (index * 0.1)}s`;
+      });
+      
+      // Apply animation to tech stack
+      const techStack = document.querySelector('.tech-animation');
+      if (techStack) {
+        (techStack as HTMLElement).style.animationDelay = '0.3s';
+      }
+      
+      // Add drag functionality
+      const draggableItems = document.querySelectorAll('.item-animation');
+      
+      const cleanup: Array<() => void> = [];
+      
+      draggableItems.forEach(item => {
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+        
+        const onMouseDown = (e: MouseEvent) => {
+          isDragging = true;
+          const itemElement = item as HTMLElement;
+          const rect = itemElement.getBoundingClientRect();
+          
+          // Calculate the offset of the mouse within the element
+          offsetX = e.clientX - rect.left;
+          offsetY = e.clientY - rect.top;
+          
+          // Add active class for visual feedback
+          itemElement.classList.add('active');
+          
+          // Prevent default behaviors
+          e.preventDefault();
+        };
+        
+        const onMouseMove = (e: MouseEvent) => {
+          if (!isDragging) return;
+          
+          const itemElement = item as HTMLElement;
+          const deskElement = deskRef.current;
+          
+          if (!deskElement) return;
+          
+          const deskRect = deskElement.getBoundingClientRect();
+          
+          // Calculate new position relative to the desk
+          const newLeft = e.clientX - deskRect.left - offsetX;
+          const newTop = e.clientY - deskRect.top - offsetY;
+          
+          // Set new position
+          itemElement.style.left = `${newLeft}px`;
+          itemElement.style.top = `${newTop}px`;
+          
+          // Remove any right or bottom positioning that might interfere
+          itemElement.style.right = 'auto';
+          itemElement.style.bottom = 'auto';
+        };
+        
+        const onMouseUp = () => {
+          if (!isDragging) return;
+          
+          isDragging = false;
+          const itemElement = item as HTMLElement;
+          
+          // Remove active class
+          itemElement.classList.remove('active');
+        };
+        
+        // Add event listeners with proper TypeScript typing
+        const element = item as HTMLElement;
+        element.addEventListener('mousedown', onMouseDown as EventListener);
+        
+        document.addEventListener('mousemove', onMouseMove as EventListener);
+        document.addEventListener('mouseup', onMouseUp as EventListener);
+        
+        // Touch events for mobile with proper typing
+        const handleTouchStart = (e: TouchEvent) => {
+          const touch = e.touches[0];
+          isDragging = true;
+          const itemElement = item as HTMLElement;
+          const rect = itemElement.getBoundingClientRect();
+          
+          offsetX = touch.clientX - rect.left;
+          offsetY = touch.clientY - rect.top;
+          
+          itemElement.classList.add('active');
+          e.preventDefault();
+        };
+        
+        const handleTouchMove = (e: TouchEvent) => {
+          if (!isDragging) return;
+          
+          const touch = e.touches[0];
+          const itemElement = item as HTMLElement;
+          const deskElement = deskRef.current;
+          
+          if (!deskElement) return;
+          
+          const deskRect = deskElement.getBoundingClientRect();
+          
+          const newLeft = touch.clientX - deskRect.left - offsetX;
+          const newTop = touch.clientY - deskRect.top - offsetY;
+          
+          itemElement.style.left = `${newLeft}px`;
+          itemElement.style.top = `${newTop}px`;
+          itemElement.style.right = 'auto';
+          itemElement.style.bottom = 'auto';
+          
+          e.preventDefault();
+        };
+        
+        const handleTouchEnd = () => {
+          if (!isDragging) return;
+          
+          isDragging = false;
+          const itemElement = item as HTMLElement;
+          itemElement.classList.remove('active');
+        };
+        
+        element.addEventListener('touchstart', handleTouchStart as EventListener);
+        document.addEventListener('touchmove', handleTouchMove as EventListener, { passive: false });
+        document.addEventListener('touchend', handleTouchEnd as EventListener);
+        
+        // Push cleanup functions
+        cleanup.push(() => {
+          element.removeEventListener('mousedown', onMouseDown as EventListener);
+          document.removeEventListener('mousemove', onMouseMove as EventListener);
+          document.removeEventListener('mouseup', onMouseUp as EventListener);
+          
+          element.removeEventListener('touchstart', handleTouchStart as EventListener);
+          document.removeEventListener('touchmove', handleTouchMove as EventListener);
+          document.removeEventListener('touchend', handleTouchEnd as EventListener);
+        });
+      });
+      
+      return cleanup;
+    };
+    
+    // Initial setup
+    let cleanup = setupDragging();
+    
+    // Watch for tech icons being added and reapply dragging
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          // Clean up previous event listeners
+          cleanup.forEach(fn => fn());
+          
+          // Setup new event listeners
+          cleanup = setupDragging();
+        }
+      });
+    });
+    
+    // Start observing the container for tech icons
+    if (deskRef.current) {
+      observer.observe(deskRef.current, { childList: true, subtree: true });
+    }
+    
+    // Cleanup
+    return () => {
+      if (document.head.contains(styleElement)) {
+        document.head.removeChild(styleElement);
+      }
+      cleanup.forEach(fn => fn());
+      observer.disconnect();
+    };
+  }, []);
 
   // Create tech icon elements based on the project technologies
   const getTechIconPath = (tech: string): string => {
@@ -271,6 +318,7 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
       'typescript': '/techicons/typescript.png',
       'javascript': '/techicons/javascript.png',
       'python': '/techicons/python.png',
+      'next': '/techicons/nextjs.png',
       'nextjs': '/techicons/nextjs.png',
       'tailwind': '/techicons/Tailwind Logo.png',
       'shadcn': '/techicons/shadcn.png',
@@ -280,8 +328,16 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
       'langchain': '/techicons/langchain.webp',
       'vite': '/techicons/vite.png',
       'electron': '/techicons/electron.png',
-      'react-native': '/techicons/react-native-logo.svg',
+      'react-native': '/techicons/reactnative.svg',
       'cursor': '/techicons/cursor.jpeg',
+      'node': '/techicons/nodejs.png',
+      'express': '/techicons/express.png',
+      'mongodb': '/techicons/MongoDB Logo.svg',
+      'aws': '/techicons/aws.png',
+      'redis': '/techicons/redis.webp',
+      'redux': '/techicons/redux.png',
+      'ec2': '/techicons/AWS EC2 Logo.svg',
+      'gateway': '/techicons/aws_gateway.png',
     };
     
     // Try to match the tech name (case insensitive)
@@ -298,17 +354,36 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
 
   // Generate random positions for tech icons
   const getRandomPosition = (index: number): { top: string, left: string } => {
-    // Create a grid-like distribution across the board
-    const col = (index % 3) / 3;
-    const row = Math.floor(index / 3) / 2;
+    // Create more random positions across the whiteboard
+    // Define different areas of the whiteboard
+    const areas = [
+      { top: [10, 25], left: [10, 30] },      // top-left
+      { top: [10, 25], left: [70, 90] },      // top-right
+      { top: [60, 85], left: [5, 25] },       // bottom-left
+      { top: [60, 85], left: [75, 95] },      // bottom-right
+      { top: [40, 70], left: [40, 60] },      // center
+      { top: [15, 35], left: [40, 60] },      // top-center
+      { top: [60, 80], left: [40, 60] }       // bottom-center
+    ];
     
-    // Add some randomness
-    const topOffset = 40 + row * 60 + Math.random() * 10;
-    const leftOffset = 40 + col * 60 + Math.random() * 10;
+    // Select a random area, with some weighting to avoid center (where video likely is)
+    let areaIndex = Math.floor(Math.random() * areas.length);
+    if (areaIndex === 4) { // If center area, 50% chance to pick another area
+      if (Math.random() > 0.5) {
+        areaIndex = Math.floor(Math.random() * (areas.length - 1));
+        if (areaIndex >= 4) areaIndex++; // Skip center
+      }
+    }
+    
+    const area = areas[areaIndex];
+    
+    // Get random position within the selected area
+    const top = area.top[0] + Math.random() * (area.top[1] - area.top[0]);
+    const left = area.left[0] + Math.random() * (area.left[1] - area.left[0]);
     
     return {
-      top: `${topOffset}%`,
-      left: `${leftOffset}%`,
+      top: `${top}%`,
+      left: `${left}%`,
     };
   };
 
@@ -339,8 +414,8 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
             {/* Client-only DrawingBoard - will only render on client */}
             <DrawingBoard containerRef={deskRef} />
             
-            {/* Project title written on the whiteboard as handwriting */}
-            <div className="absolute top-8 left-8 z-40 item-animation title-text cursor-grab active:cursor-grabbing">
+            {/* Project title written on the whiteboard as handwriting - centered */}
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 z-40 item-animation title-text cursor-grab active:cursor-grabbing">
               {project.name}
             </div>
 
@@ -360,7 +435,7 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
               </p>
             </div>
             
-            {/* Make the video draggable by wrapping it in a draggable div */}
+            {/* Center the video in the whiteboard */}
             <div 
               className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/3 z-40 item-animation cursor-grab active:cursor-grabbing" 
               style={{
@@ -380,7 +455,7 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
             {techIconsVisible && project.technologies.map((tech, index) => (
               <div
                 key={`tech-${index}`}
-                className="absolute cursor-grab active:cursor-grabbing item-animation transition-all duration-300"
+                className="absolute cursor-grab active:cursor-grabbing item-animation tech-sticker transition-all duration-300"
                 style={{
                   ...getRandomPosition(index),
                   zIndex: 45 + index,
@@ -523,7 +598,7 @@ export function ProjectDetail({ project, dictionary, onClose }: ProjectDetailPro
             <Button 
               variant="outline" 
               onClick={onClose}
-              className="absolute bottom-8 left-8 z-40 bg-white hover:bg-gray-100"
+              className="absolute bottom-8 left-8 z-40 bg-white hover:bg-gray-100 mobile-bottom-controls"
             >
               {dictionary.backToProjects}
             </Button>

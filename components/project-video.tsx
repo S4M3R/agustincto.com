@@ -30,11 +30,7 @@ export function ProjectVideo({ videoUrl, thumbnailUrl, name }: ProjectVideoProps
     }
   }
 
-  // Don't render if no video or thumbnail
-  if (!hasVideo && !thumbnailUrl) {
-    return null;
-  }
-
+  // Always render the component, using thumbnail as fallback
   return (
     <div 
       className={`rounded-lg overflow-hidden shadow-xl border-4 border-white
