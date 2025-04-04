@@ -79,7 +79,7 @@
     "projects": [],
     "list": [
       {
-        "year": "2024",
+        "year": "2025",
         "name": "agustincto.com",
         "description": "My personal portfolio website built with Next.js, Tailwind CSS, and Shadcn UI components to showcase my projects and skills.",
         "technologies": ["Next.js", "Tailwind", "TypeScript", "React", "Shadcn UI", "Cursor"],
@@ -188,7 +188,7 @@
     "viewResume": "View My Resume"
   },
   "footer": {
-    "copyright": "© 2024 Agustin Suarez Merino. All rights reserved."
+    "copyright": "© 2025 Agustin Suarez. All rights reserved."
   },
   "currentStartup": {
     "chip": "2021 - Present",
