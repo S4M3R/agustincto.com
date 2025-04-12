@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Agustin Suarez Merino - Personal Portfolio
+
+This is a personal portfolio website built with Next.js 15, React 19, and TypeScript. The site showcases Agustin Suarez Merino's work as a Software Engineer & Entrepreneur.
+
+## Key Features
+
+- Responsive design with mobile-first approach
+- Multi-language support (English and Spanish)
+- Dark/light theme using next-themes
+- Modern UI components using Radix UI
+- Styled with Tailwind CSS
+
+## Project Structure
+
+- `app/`: Next.js App Router pages and layouts
+- `components/`: Reusable UI components
+- `hooks/`: Custom React hooks
+- `lib/`: Utility functions and shared logic
+- `public/`: Static assets
+- `styles/`: Global styles
+
+## Important Files
+
+- `app/page.tsx`: Main landing page
+- `app/[lang]/page.tsx`: Language-specific pages
+- `components/ui/`: Core UI components
+- `lib/dictionary/`: Language dictionaries
+- `tailwind.config.ts`: Tailwind configuration
+- `next.config.mjs`: Next.js configuration
+
+## Development Guidelines
+
+- Use TypeScript for type safety
+- Follow the existing component structure
+- Maintain responsive design principles
+- Keep language files in sync
+- Use Tailwind CSS for styling
+- Follow the established project structure
+
+## Tech Stack Details
+
+- Next.js 15 for the framework
+- React 19 for UI components
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Radix UI for accessible components
+- Next Themes for theme management
