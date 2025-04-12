@@ -1,0 +1,82 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Style Guidelines
+
+## TypeScript & React
+
+- Use TypeScript for all new files and components
+- Prefer functional components with explicit type definitions
+- Use React hooks for state management and side effects
+- Follow the React 19 best practices and patterns
+
+## Component Structure
+
+- Place reusable components in `components/` directory
+- Group related components in subdirectories
+- Use PascalCase for component file names
+- Implement proper prop types and interfaces
+- Follow atomic design principles where applicable
+
+## Styling
+
+- Use Tailwind CSS for all styling needs
+- Follow mobile-first responsive design
+- Maintain consistent spacing using Tailwind's spacing scale
+- Use CSS variables for theme-specific values
+- Keep styles modular and reusable
+
+## Code Organization
+
+- Follow the established project structure
+- Keep files focused and single-responsibility
+- Use meaningful file and directory names
+- Group related functionality together
+- Maintain clear separation of concerns
+
+## Naming Conventions
+
+- Use PascalCase for components and types
+- Use camelCase for variables, functions, and instances
+- Use kebab-case for file names
+- Prefix interfaces with 'I' (e.g., IButtonProps)
+- Use descriptive and meaningful names
+
+## Best Practices
+
+- Write clean, maintainable code
+- Include proper error handling
+- Add appropriate comments for complex logic
+- Follow accessibility guidelines
+- Implement proper SEO practices
+- Keep performance in mind
+
+## Language Support
+
+- Maintain parallel language files
+- Use translation keys consistently
+- Keep language files organized and up-to-date
+- Follow i18n best practices
+
+## Theme Support
+
+- Use next-themes for theme management
+- Implement proper dark/light mode styles
+- Use CSS variables for theme-specific values
+- Ensure consistent theming across components
+
+## Testing
+
+- Write tests for critical functionality
+- Use meaningful test descriptions
+- Follow testing best practices
+- Maintain good test coverage
+
+## Documentation
+
+- Document complex logic and components
+- Keep README files up-to-date
+- Include proper JSDoc comments
+- Document API endpoints and interfaces
