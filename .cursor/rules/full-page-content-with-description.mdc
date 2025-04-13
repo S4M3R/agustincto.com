@@ -1,0 +1,103 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Agustin Suarez Merino - Personal Portfolio Website
+
+## Overview
+A modern, responsive personal portfolio website showcasing Agustin Suarez Merino's work as a Software Engineer & Entrepreneur. The site is built with Next.js 15, React 19, and TypeScript, featuring a clean, professional design with multi-language support (English and Spanish).
+
+## Page Structure
+
+### Header
+- Navigation menu with links to About, Projects, Articles, and Contact sections
+- Language switcher between English and Spanish
+- Responsive mobile menu
+
+### Hero Section
+- Main headline: "Just keep building"
+- Subtitle: "Software Engineer & Entrepreneur building innovative solutions"
+- Call-to-action button: "Get in Touch"
+- Scroll down indicator
+
+### About Section
+- Personal introduction highlighting 8 years of expertise
+- Current role as Founding Engineer at Ventia
+- Brief description of professional journey and achievements
+- Call-to-action to learn more
+
+### Current Startup Section
+- Featured company: Ventia
+- Role: CTO & Founder (since 2019)
+- Key achievements and responsibilities
+- Technologies used
+- Company website link
+
+### Projects Section
+- Grid layout of personal and work projects
+- Filter options: All, Work, Personal
+- Project cards featuring:
+  - Project name and year
+  - Description
+  - Technologies used
+  - Thumbnail image
+  - External links (when available)
+- Featured projects include:
+  - agustincto.com (Portfolio website)
+  - Companion AI (Personal AI helper)
+  - thecirculartech.com (Fashion product manager)
+  - IA Customer analysis project
+  - StartupsUruguay.com
+  - Vendedores Pro
+
+### Skills Section
+- Categorized skills display:
+  - Languages & Frameworks
+  - Databases
+  - Cloud & Infrastructure
+- Visual representation of technical expertise
+
+### Articles Section
+- Blog posts and insights
+- Categories: Technology, Entrepreneurship, Product Development
+- Read more functionality
+- View all articles option
+
+### Contact Section
+- Social media links (Twitter, Instagram, LinkedIn)
+- Email contact
+- Resume download option
+
+### Footer
+- Copyright information
+- Year: 2025
+
+## Technical Features
+- Responsive design with mobile-first approach
+- Dark/light theme support
+- Smooth animations and transitions
+- SEO optimized
+- Accessible UI components
+- Performance optimized
+
+## Design Elements
+- Modern, clean aesthetic
+- Consistent typography using Montserrat, Playfair Display, and Caveat fonts
+- Professional color scheme
+- Interactive elements with hover effects
+- Smooth scrolling navigation
+- Responsive images and layouts
+
+## Content Management
+- Multi-language support through JSON dictionaries
+- Structured content organization
+- Easy-to-update project and experience sections
+- Dynamic content loading
+
+## Performance Considerations
+- Optimized images and assets
+- Efficient component rendering
+- Lazy loading for better performance
+- Minimal dependencies
+- Clean code structure
